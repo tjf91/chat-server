@@ -25,7 +25,7 @@ export default class Message extends Component {
     const { id, edit } = this.props;
     if( event.key === "Enter" && text.length !== 0 ) {
       edit( id, text );
-      this.setState({ editting: false });
+      this.setState({ editing: false });
     }
   }
 
@@ -37,7 +37,7 @@ export default class Message extends Component {
       <div className="Message__container">
         <span className="Message__time">{time}</span>
         {
-          editting
+          editing
           ?
             <input className="Message__input" value={ this.state.text } onChange={ this.handleChange } onKeyPress={ this.edit } />
           :
